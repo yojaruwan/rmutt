@@ -12,6 +12,7 @@ if ($result->num_rows > 0) {
     $row = $result-> fetch_assoc();
     $_SESSION['id'] = $row['id'];
     $_SESSION['name'] = $row['name'];
+    $_SESSION['role'] = $row['role'];
     $_SESSION['logined'] = TRUE;
     session_write_close();
     header("Location: index.php");
@@ -23,3 +24,36 @@ if ($result->num_rows > 0) {
 }
 }
 $datathisuser = mysqli_Fetch_Array(mysqli_query($conn,"SELECT * FROM login Where id='$_SESSION[id]'"));
+function statusbar($statusid){
+    if($statusid==0){
+        $color = "warning";
+        $text = "รออนุมัติ";
+    }elseif($statusid==1){
+        $color = "success";
+        $text = "อนุมัติแล้ว รอพบแพทย์";
+    }elseif($statusid==2){
+        $color = "danger";
+        $text = "ไม่อนุมัติ";
+    }elseif($statusid==3){
+        $color = "danger";
+        $text = "ยกเลิกการจอง";
+    }
+    return $text;
+}
+
+function colorbadge($statusid){
+    if($statusid==0){
+        $color = "warning";
+        $text = "รออนุมัติ";
+    }elseif($statusid==1){
+        $color = "success";
+        $text = "อนุมัติแล้ว รอพบแพทย์";
+    }elseif($statusid==2){
+        $color = "danger";
+        $text = "ไม่อนุมัติ";
+    }elseif($statusid==3){
+        $color = "danger";
+        $text = "ยกเลิกการจอง";
+    }
+    return $color;
+}

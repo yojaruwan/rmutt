@@ -1,20 +1,14 @@
 -- phpMyAdmin SQL Dump
--- version 4.6.6
+-- version 4.9.3
 -- https://www.phpmyadmin.net/
 --
--- Host: localhost
--- Generation Time: Sep 23, 2020 at 12:39 PM
--- Server version: 5.7.17-log
--- PHP Version: 5.6.30
+-- Host: localhost:8889
+-- Generation Time: Sep 25, 2020 at 11:51 AM
+-- Server version: 5.7.26
+-- PHP Version: 7.4.2
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
-
-
-/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
-/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
-/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8mb4 */;
 
 --
 -- Database: `dps_db`
@@ -32,6 +26,7 @@ CREATE TABLE `login` (
   `password` varchar(11) NOT NULL,
   `name` varchar(100) NOT NULL,
   `faculty` varchar(150) NOT NULL,
+  `role` int(1) NOT NULL DEFAULT '2',
   `birthday` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -39,9 +34,9 @@ CREATE TABLE `login` (
 -- Dumping data for table `login`
 --
 
-INSERT INTO `login` (`id`, `username`, `password`, `name`, `faculty`, `birthday`) VALUES
-(1, '1160102030427', '195689', 'K.Jaruwan', '', '0000-00-00'),
-(2, 'admin', 'admin', 'K.Varunee', '', '0000-00-00');
+INSERT INTO `login` (`id`, `username`, `password`, `name`, `faculty`, `role`, `birthday`) VALUES
+(1, '1160102030427', '195689', 'K.Jaruwan', '', 2, '0000-00-00'),
+(2, 'admin', 'admin', 'K.Varunee', '', 1, '0000-00-00');
 
 -- --------------------------------------------------------
 
@@ -51,11 +46,24 @@ INSERT INTO `login` (`id`, `username`, `password`, `name`, `faculty`, `birthday`
 
 CREATE TABLE `meetdr` (
   `id` int(11) NOT NULL,
-  `datetime` datetime NOT NULL,
+  `date` date NOT NULL,
+  `time` time NOT NULL,
   `ownerid` varchar(13) NOT NULL,
-  `status` tinyint(4) NOT NULL DEFAULT '0',
+  `status` tinyint(1) NOT NULL DEFAULT '0',
   `timestamp` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='ตารางนัดพบแพทย์';
+
+--
+-- Dumping data for table `meetdr`
+--
+
+INSERT INTO `meetdr` (`id`, `date`, `time`, `ownerid`, `status`, `timestamp`) VALUES
+(1, '2020-09-25', '00:00:00', '2', 0, '2020-09-25 10:34:52'),
+(2, '2020-09-25', '20:03:00', '2', 0, '2020-09-25 11:04:27'),
+(3, '2020-06-12', '09:30:00', '2', 0, '2020-09-25 11:08:24'),
+(4, '2020-09-13', '10:30:00', '2', 2, '2020-09-25 11:14:52'),
+(5, '2020-09-27', '09:00:00', '1', 3, '2020-09-25 11:36:00'),
+(6, '2020-09-12', '20:45:00', '1', 2, '2020-09-25 11:45:23');
 
 -- --------------------------------------------------------
 
@@ -125,16 +133,15 @@ ALTER TABLE `question`
 --
 ALTER TABLE `login`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
 --
 -- AUTO_INCREMENT for table `meetdr`
 --
 ALTER TABLE `meetdr`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+
 --
 -- AUTO_INCREMENT for table `question`
 --
 ALTER TABLE `question`
   MODIFY `question_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
-/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
-/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
-/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
