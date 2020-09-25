@@ -22,7 +22,8 @@ require_once 'checkrole.php';
 
 <body>
 
-        <?php require_once 'navbar.php'; ?>
+<?php  require_once 'banner.php'; ?>
+<?php  require_once 'navbar.php'; ?>
   <div class="container">  
     <div class="row">
       <div class="col-md-1"></div>

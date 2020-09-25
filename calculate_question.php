@@ -79,7 +79,8 @@ require_once 'checkrole.php';
  </head>
  
  <body>
- <?php require 'navbar.php'; ?>
+ <?php  require_once 'banner.php'; ?>
+<?php  require_once 'navbar.php'; ?>
 
    <div class="container">  
      <div class="row">

@@ -23,9 +23,8 @@ require_once 'checkrole.php';
 
 
 
-    <?php require_once 'navbar.php'; 
-    
-    ?>
+<?php  require_once 'banner.php'; ?>
+<?php  require_once 'navbar.php'; ?>
 <h1 align=center style="background-color: #99ffcc;" ><p></p>สาเหตุอาการภาวะซึมเศร้า</h1>
 <div class="container">
 <p style="font-size:19"><dd>สาเหตุที่จะกระตุ้นการเกิดภาวะซึมเศร้าที่พบบ่อย  คือ การมีทั้งความเสี่ยงทางพันธุกรรม ทางสภาพจิตใจ<br>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;และการเผชิญกับสถานการณ์เลวร้าย ร่วมกันทั้ง 3 ปัจจัย</p>
