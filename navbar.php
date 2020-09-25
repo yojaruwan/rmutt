@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark text-white">
         <a class="navbar-brand" href="index.php">RMUTT COUNSELLING</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -15,7 +15,7 @@
                 <?php
                 if($_SESSION['logined']===TRUE){ ?>
                     <li class="nav-item">
-                     <a class="nav-link" href="meetdog.php">ตารางนัดพบแพทย์</a>
+                     <a class="nav-link" href="meetdoctor.php">ตารางนัดพบแพทย์</a>
                     </li>
                 <?php } ?>
                 
@@ -65,10 +65,12 @@
     </div>
 </div>
                 <?php }else{ ?>
-                    <i class="fa fa-user text-white"> สวัสดีคุณ <?= $datathisuser['name'] ?></i>
-                    |<a href="logout.php" class="btn btn-danger"><i class="fa fa-sign-out-alt text-white"></i></a>
-                <?php } ?></button>
+                    <i class="fa fa-user text-white">  </i> สวัสดีคุณ <?= $datathisuser['name'] ?> 
+                    <a href="logout.php" class="btn btn-danger"><i class="fa fa-sign-out-alt text-white"></i></a>
+                <?php } ?>
                 
             </form>
         </div>
+
     </nav>
+    

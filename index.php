@@ -10,16 +10,12 @@ require_once 'checkrole.php';
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
     <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300&display=swap" rel="stylesheet">
     <title>RMUTT Counselling</title>
-
-<style>
-        *{
+    <style>
+        * {
             font-family: 'Prompt', sans-serif;
         }
     </style>
-
-
 </head>
-
 <body>
     <?php require_once 'navbar.php'; ?>
     <div class="row">
@@ -27,7 +23,7 @@ require_once 'checkrole.php';
             <img src="img/home.jpg" alt="" class="img-fluid">
         </div>
         <div class="col-sm-8">
-            <img src="img/rmutt.jpg" alt="" class="img-fluid">
+            <img src="img/logo.png" alt="" class="img-fluid">
             <hr>
             <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
                 <ol class="carousel-indicators">
