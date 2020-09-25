@@ -3,7 +3,7 @@
 
 $servername = 'localhost';
 $username = 'root';
-$password = '123456789';
+$password = 'root';
 $dbname = 'dps_db';
 
 $conn = mysqli_connect($servername, $username, $password, $dbname);
