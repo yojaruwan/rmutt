@@ -3,7 +3,7 @@
 
 $servername = 'localhost';
 $db_username = 'root';
-$db_password = 'root';
+$db_password = '';
 $dbname = 'dps_db';
 
 $conn = mysqli_connect($servername, $db_username, $db_password, $dbname);
@@ -17,6 +17,7 @@ if (!$conn) {
 	echo "console.log('Connection : OK (เชื่อมต่อฐานข้อมูลสำเร็จ)');";
 	echo "</script>";
 }
-
+// close error if you want to know error please comment below line
+error_reporting(E_ALL ^ E_NOTICE);
 // mysqli_close($conn); // ปิดฐานข้อมูล
 ?>
